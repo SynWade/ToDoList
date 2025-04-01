@@ -31,6 +31,7 @@ namespace ToDoListApp
                 Console.WriteLine($"Title: {item.title}");
                 Console.WriteLine($"Description: {item.description}");
                 Console.WriteLine($"Due date: {item.dueDate.ToString()}");
+                Console.WriteLine($"Completed: {item.completed.ToString()}");
                 Console.WriteLine();
                 itemNumber++;
             }
