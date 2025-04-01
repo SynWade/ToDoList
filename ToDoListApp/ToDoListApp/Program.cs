@@ -48,6 +48,7 @@ while(menuChoice != 9)
 
             //Add the item
             itemManagement.AddItem(title, description, dueDate);
+            Console.WriteLine();
             break;
         //Displays the list of items
         case 2:
@@ -55,6 +56,7 @@ while(menuChoice != 9)
             items = itemManagement.GetItems();
             //Displays the list items
             common.DisplayOptions(items, "list");
+            Console.WriteLine();
             break;
         case 3:
             //Gets the items from the list
@@ -81,36 +83,36 @@ while(menuChoice != 9)
             string newValue = "";
 
             switch (updateFieldChoice)
-                {
-                    case 1:
-                        //Updating title
-                        newValue = Console.ReadLine();
-                        itemManagement.UpdateItem(items[itemChoice - 1].id, newDate, newValue, "");
-                        break;
-                    case 2:
-                        //Updating description
-                        newValue = Console.ReadLine();
-                        itemManagement.UpdateItem(items[itemChoice - 1].id, newDate, "", newValue);
-                        break;
-                    case 3:
-                        //Updating due date
-                        newDate = validation.ValidateDate();
-                        itemManagement.UpdateItem(items[itemChoice - 1].id, newDate, "", "");
-                        break;
-                    case 4:
-                        //Updating completed status
-                        Console.WriteLine("Please input the number corresponding to whether or not the item is completed.");
-                        Console.WriteLine("1: true.");
-                        Console.WriteLine("2: false.");
-
-                        //Validates proper choice of status to update
-                        if(validation.OptionValidation(2) == 1)
-                            itemManagement.UpdateItem(items[itemChoice - 1].id, newDate, "", "", true);
-                        else
-                            itemManagement.UpdateItem(items[itemChoice - 1].id, newDate, "", "", false);
-
+            {
+                case 1:
+                    //Updating title
+                    newValue = Console.ReadLine();
+                    itemManagement.UpdateItem(items[itemChoice - 1].id, newDate, newValue, "");
                     break;
+                case 2:
+                    //Updating description
+                    newValue = Console.ReadLine();
+                    itemManagement.UpdateItem(items[itemChoice - 1].id, newDate, "", newValue);
+                    break;
+                case 3:
+                    //Updating due date
+                    newDate = validation.ValidateDate();
+                    itemManagement.UpdateItem(items[itemChoice - 1].id, newDate, "", "");
+                    break;
+                case 4:
+                    //Updating completed status
+                    Console.WriteLine("Please input the number corresponding to whether or not the item is completed.");
+                    Console.WriteLine("1: true.");
+                    Console.WriteLine("2: false.");
+
+                    //Validates proper choice of status to update
+                    if(validation.OptionValidation(2) == 1)
+                        itemManagement.UpdateItem(items[itemChoice - 1].id, newDate, "", "", true);
+                    else
+                        itemManagement.UpdateItem(items[itemChoice - 1].id, newDate, "", "", false);
+                break;
             }
+            Console.WriteLine();
             break;
         case 4:
             //Get list items
@@ -124,14 +126,17 @@ while(menuChoice != 9)
 
             //Delete the item
             itemManagement.DeleteItem(items[itemChoice - 1].id);
+            Console.WriteLine();
             break;
         case 5:
             //Sorts the list by title
             itemManagement.SortByTitle();
+            Console.WriteLine();
             break;
         case 6:
             //Sorts the list by description
             itemManagement.SortByDescription();
+            Console.WriteLine();
             break;
         case 7:
             //Gets the list items that are completed
@@ -141,6 +146,7 @@ while(menuChoice != 9)
             else 
                 //Displays the list items
                 common.DisplayOptions(items, "list");
+            Console.WriteLine();
             break;
         case 8:
             //Gets the list items that are incomplete
@@ -150,6 +156,7 @@ while(menuChoice != 9)
             else
                 //Displays the list items
                 common.DisplayOptions(items, "list");
+            Console.WriteLine();
             break;
     }
 }
