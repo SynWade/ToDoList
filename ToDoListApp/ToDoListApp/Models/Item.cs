@@ -19,5 +19,7 @@ namespace ToDoListApp
         public string description { get; set; }
         //The due date of the item
         public DateOnly dueDate { get; set; }
+        //Check if item is completed
+        public bool completed { get; set; }
     }
 }
